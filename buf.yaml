@@ -1,0 +1,4 @@
+version: v1
+name: buf.build/matoravec/pymodel
+deps:
+  - buf.build/googleapis/googleapis

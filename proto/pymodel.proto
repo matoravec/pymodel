@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package proto;
+
+option go_package = "github.com/matoravec/pymodel/proto";
+
+message Features {
+  int32 id = 1;
+  double f1 = 2;
+  double f2 = 3;
+}
+
+message Prediction {
+  int32 id = 1;
+  double prediction = 2;
+}
+
+message PredictRequest {
+  repeated Features features = 1;
+}
+
+message PredictResponse {
+  repeated Prediction predictions = 1;
+}
+
+service PredictService {
+  rpc Predict(PredictRequest) returns (PredictResponse) {}
+}
